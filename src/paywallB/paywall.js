@@ -1,16 +1,9 @@
+import template from './index.html';
 import './style.css';
 import EventBus from 'event-bus';
 
 export function mount(container) {
-  container.innerHTML = `
-    <div class="pw-overlay">
-      <div class="pw-modal">
-        <h2 class="pw-title">Choose your plan</h2>
-        <div class="pw-products" id="pw-products"></div>
-        <button class="pw-cta" id="pw-continue">Get Full Access</button>
-      </div>
-    </div>
-  `;
+  container.innerHTML = template;
 
   let products = [];
   const list = container.querySelector('#pw-products');

@@ -14,6 +14,11 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.html$/,
+        type: 'asset/source',
+        include: path.resolve(__dirname, 'src'),
+      },
     ],
   },
   devServer: {
