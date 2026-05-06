@@ -3,10 +3,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 
 module.exports = {
-  entry: './src/dev.js',
+  entry: './src/index.js',
   output: {
     publicPath: 'auto',
     clean: true,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
   },
   devServer: {
     port: 3001,
@@ -24,9 +32,9 @@ module.exports = {
       name: 'paywallRemote',
       filename: 'remoteEntry.js',
       exposes: {
-        './PaywallA': './src/paywallA.js',
-        './PaywallB': './src/paywallB.js',
-        './PaywallC': './src/paywallC.js',
+        './PaywallA': './src/paywallA/paywall.js',
+        './PaywallB': './src/paywallB/paywall.js',
+        './PaywallC': './src/paywallC/paywall.js',
       },
       shared: {
         'event-bus': { singleton: true, requiredVersion: false },
