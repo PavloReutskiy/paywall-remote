@@ -8,6 +8,10 @@
     "deploy": "npm run build && gh-pages -d dist"
   },
   "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.5",
+    "@babel/preset-react": "^7.28.5",
+    "babel-loader": "^10.1.1",
     "css-loader": "^7.1.0",
     "gh-pages": "^6.0.0",
     "html-webpack-plugin": "^5.6.0",
@@ -15,5 +19,9 @@
     "webpack": "^5.97.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.2.0"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }

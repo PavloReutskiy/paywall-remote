@@ -19,6 +19,24 @@ module.exports = {
         type: 'asset/source',
         include: path.resolve(__dirname, 'src'),
       },
+      {
+        test: /\.(js|jsx)$/,
+        include: path.resolve(__dirname, 'src/paywallD'),
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
+      },
+      {
+        test: /\.(jpg|jpeg|png|gif|svg)$/,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(ttf|woff|woff2)$/,
+        type: 'asset/resource',
+      },
     ],
   },
   devServer: {
@@ -28,6 +46,7 @@ module.exports = {
     },
   },
   resolve: {
+    extensions: ['.js', '.jsx'],
     alias: {
       'event-bus': path.resolve(__dirname, 'src/event-bus.js'),
     },
@@ -40,6 +59,7 @@ module.exports = {
         './PaywallA': './src/paywallA/paywall.js',
         './PaywallB': './src/paywallB/paywall.js',
         './PaywallC': './src/paywallC/paywall.js',
+        './PaywallD': './src/paywallD/paywall.js',
       },
       shared: {
         'event-bus': { singleton: true, requiredVersion: false },
