@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpaywall_remote=self.webpackChunkpaywall_remote||[]).push([[867],{6867(e,t,n){n.r(t),n.d(t,{default:()=>a});const a={dispatch(e,t){window.dispatchEvent(new CustomEvent(e,{detail:t}))},on(e,t){const n=e=>t(e.detail);return window.addEventListener(e,n),()=>window.removeEventListener(e,n)}}}}]);
